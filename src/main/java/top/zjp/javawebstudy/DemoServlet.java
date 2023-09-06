@@ -1,5 +1,6 @@
 package top.zjp.javawebstudy;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ import java.util.Random;
 public class DemoServlet extends HttpServlet {
 
     @Override
-    public void init() throws ServletException {
+    public void init(ServletConfig config) throws ServletException {
         System.out.println("Demo init");
     }
 

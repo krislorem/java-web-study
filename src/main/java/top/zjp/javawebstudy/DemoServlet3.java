@@ -1,5 +1,6 @@
 package top.zjp.javawebstudy;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,13 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Random;
 
 @WebServlet("/demo3")
 public class DemoServlet3 extends HttpServlet {
 
     @Override
-    public void init() {
+    public void init(ServletConfig config) {
         System.out.println("Demo init");
     }
 
@@ -29,16 +29,6 @@ public class DemoServlet3 extends HttpServlet {
         out.print(jsonString);
         out.flush();
         out.close();
-    }
-
-    private String getCode() {
-        Random random = new Random();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 4; i++) {
-            int r = random.nextInt(10);
-            sb.append(r);
-        }
-        return sb.toString();
     }
 
     @Override
